@@ -1,0 +1,29 @@
+{
+  "name": "aurora-up",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": "./dist/index.js",
+  "dependencies": {
+    "aws-sdk": "^2.584.0",
+    "commander": "^4.0.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-json": "^4.0.0",
+    "@types/delay": "^3.1.0",
+    "@types/listr": "^0.14.2",
+    "@types/node": "^12.12.14",
+    "rollup": "^1.27.8",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.3",
+    "delay": "^4.3.0",
+    "listr": "^0.14.3"
+  },
+  "scripts": {
+    "prepublish": "rollup -c; chmod +x ./dist/index.js",
+    "up": "./dist/index.js"
+  }
+}
