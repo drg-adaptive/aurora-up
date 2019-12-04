@@ -1,3 +1,5 @@
 src/
 rollup.config.js
 tsconfig.json
+.releaserc.yml
+.travis.yml
