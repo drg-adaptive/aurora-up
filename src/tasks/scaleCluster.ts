@@ -1,5 +1,6 @@
 import { RDS } from "aws-sdk";
-import delay = require("delay");
+
+import delay from "delay";
 import Context from "../context";
 import getClusterCapacity, { CapacityInfo } from "../getClusterCapacity";
 

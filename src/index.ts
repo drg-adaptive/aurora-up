@@ -40,7 +40,7 @@ const tasks = new Listr<Context>(
     },
     {
       title: "Scale cluster",
-      enabled: (ctx: Context) => ctx.capacity.CurrentCapcity === 0,
+      enabled: (ctx: Context) => !ctx?.capacity?.CurrentCapcity,
       task: scaleCluster
     }
   ],
