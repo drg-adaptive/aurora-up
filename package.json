@@ -25,8 +25,8 @@
     "@types/delay": "^3.1.0",
     "@types/listr": "^0.14.2",
     "@types/node": "^12.12.14",
-    "commitizen": "^4.0.3",
     "commander": "^4.0.1",
+    "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2",
     "delay": "^4.3.0",
     "rollup": "^1.27.8",
@@ -36,6 +36,9 @@
     "rollup-plugin-typescript2": "^0.25.3",
     "semantic-release": "^15.13.31",
     "ts-node": "^8.5.4",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-sonarts": "^1.9.0",
     "typescript": "^3.7.3"
   },
   "scripts": {
