@@ -3,3 +3,5 @@ rollup.config.js
 tsconfig.json
 .releaserc.yml
 .travis.yml
+tslint.json
+*.map
