@@ -9,12 +9,14 @@ const UPDATE_DELAY = 1000;
 export default async (ctx: Context) => {
   const rds = new RDS({ region: ctx.region });
 
-  const target = ctx.minCapacity || 1;
+  let target = ctx.minCapacity || ctx.capacity.MinCapcity;
+  target = Math.max(target, ctx.capacity.MinCapcity);
+  target = Math.min(target, ctx.capacity.MaxCapacity);
 
   await rds
     .modifyCurrentDBClusterCapacity({
       DBClusterIdentifier: ctx.cluster,
-      Capacity: Math.max(target, ctx.capacity.MinCapcity)
+      Capacity: target
     })
     .promise();
 
