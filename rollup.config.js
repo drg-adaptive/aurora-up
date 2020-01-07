@@ -3,6 +3,8 @@ import typescript from "rollup-plugin-typescript2";
 import resolve from "rollup-plugin-node-resolve";
 import json from "@rollup/plugin-json";
 import externals from "rollup-plugin-node-externals";
+import cleanup from "rollup-plugin-cleanup";
+import size from "rollup-plugin-size";
 
 export default {
   input: "./src/index.ts",
@@ -10,7 +12,8 @@ export default {
     file: "dist/index.js",
     format: "cjs",
     exports: "named",
-    banner: `#!/usr/bin/env node\n\n`
+    banner: `#!/usr/bin/env node\n\n`,
+    sourcemap: true
   },
   plugins: [
     externals({
@@ -20,6 +23,7 @@ export default {
     }),
     json(),
     typescript({
+      objectHashIgnoreUnknownHack: true,
       typescript: require("typescript")
     }),
     commonjs({
@@ -28,6 +32,8 @@ export default {
     resolve({
       preferBuiltins: true,
       extensions: [".js", ".ts"]
-    })
+    }),
+    cleanup(),
+    size({})
   ]
 };
