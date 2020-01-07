@@ -30,6 +30,12 @@ _Cluster Identifier Method_
 aurora-up --region us-east-1 --cluster SomeClusterId
 ```
 
+### Minimum Capacity
+
+You can provide a target capacity using the `minCapacity` parameter. If your provided target
+capacity is outside of the cluster's Min/Max capacity settings, the program will adjust
+it to a valid value.
+
 ## Author
 
 👤 **Ben Force**
